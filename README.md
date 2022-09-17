@@ -53,3 +53,29 @@
 
 1. yarn build
 2. yarn start
+
+# 개발 결정 사항
+
+개발파트 담당
+
+1. 메인 - 모두함께~~ : 한동민
+2. 로그인/로그아웃/프로필보기/프로필수정/프로필파일업로드/미리보기 : 이지우
+3. 아티클목록/아티클상세보기/아티클CRUD/파일업로드/미리보기/텍스트에디터 : 김민정
+4. 공통 : 구조, 공통API(Axios, Error, Router) : 한동민, 이지우
+5. 데브옵스, 백앤드, react프레임워크 : 김용연
+
+react create-react-app : CSR, react-router(api) create-next-app : SSR, router(folder) (O), TS
+
+es-lint - airbnb, kakao, naver prettier- airbnb, kakao, naver // ts-lint...
+
+기능 - 혼자서~~~~ page login component login... router state
+
+---
+
+담당자 - 협력, 팀플.... login page component state article page component state common state router
+
+객체지향
+
+input - 공통 valid, width, height, 제약사항 textarea button - color, font
+
+loginInput <- input loginButton <- button
