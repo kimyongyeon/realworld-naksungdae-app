@@ -79,3 +79,23 @@ es-lint - airbnb, kakao, naver prettier- airbnb, kakao, naver // ts-lint...
 input - 공통 valid, width, height, 제약사항 textarea button - color, font
 
 loginInput <- input loginButton <- button
+
+# eslint 적용방법
+1. git pull origin main 
+2. yarn 
+3. vscode setting.json 아래 설정 
+vscode-extension : prettier, eslint 설치 
+```
+{
+  "window.zoomLevel": 2,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+
+```
+4. yarn lint 
+5. yarn lint:fix 
