@@ -75,7 +75,7 @@ const Article = () => {
                   <textarea
                     className="form-control"
                     placeholder="Write a comment..."
-                    rows="3"
+                    rows={3}
                   ></textarea>
                 </div>
                 <div className="card-footer">
