@@ -4,6 +4,7 @@
 - feature/jiu
 - feature/min
 - feature/han
+- feature/seoa
 - main : 배포 브랜치
 
 # merge PR
