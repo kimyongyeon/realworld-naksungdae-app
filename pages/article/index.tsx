@@ -33,13 +33,11 @@ const Article = () => {
           <div className="row article-content">
             <div className="col-md-12">
               <p>
-                Web development technologies have evolved at an incredible clip
-                over the past few years.
+                Web development technologies have evolved at an incredible clip over the past few
+                years.
               </p>
               <h2 id="introducing-ionic">Introducing RealWorld.</h2>
-              <p>
-                It's a great solution for learning how other frameworks work.
-              </p>
+              <p>It's a great solution for learning how other frameworks work.</p>
             </div>
           </div>
 
@@ -72,36 +70,23 @@ const Article = () => {
             <div className="col-xs-12 col-md-8 offset-md-2">
               <form className="card comment-form">
                 <div className="card-block">
-                  <textarea
-                    className="form-control"
-                    placeholder="Write a comment..."
-                    rows="3"
-                  ></textarea>
+                  <textarea className="form-control" placeholder="Write a comment..."></textarea>
                 </div>
                 <div className="card-footer">
-                  <img
-                    src="http://i.imgur.com/Qr71crq.jpg"
-                    className="comment-author-img"
-                  />
-                  <button className="btn btn-sm btn-primary">
-                    Post Comment
-                  </button>
+                  <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
+                  <button className="btn btn-sm btn-primary">Post Comment</button>
                 </div>
               </form>
 
               <div className="card">
                 <div className="card-block">
                   <p className="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
+                    With supporting text below as a natural lead-in to additional content.
                   </p>
                 </div>
                 <div className="card-footer">
                   <a href="" className="comment-author">
-                    <img
-                      src="http://i.imgur.com/Qr71crq.jpg"
-                      className="comment-author-img"
-                    />
+                    <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
                   </a>
                   &nbsp;
                   <a href="" className="comment-author">
@@ -114,16 +99,12 @@ const Article = () => {
               <div className="card">
                 <div className="card-block">
                   <p className="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
+                    With supporting text below as a natural lead-in to additional content.
                   </p>
                 </div>
                 <div className="card-footer">
                   <a href="" className="comment-author">
-                    <img
-                      src="http://i.imgur.com/Qr71crq.jpg"
-                      className="comment-author-img"
-                    />
+                    <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
                   </a>
                   &nbsp;
                   <a href="" className="comment-author">
