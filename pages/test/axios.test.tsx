@@ -1,4 +1,6 @@
+import HeaderTest from '@src/pages/test/component/Header';
 import axios from 'axios';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export interface ArticleDTO {
@@ -39,7 +41,7 @@ const apiArticleRequest = async () => {
   // console.log(result.data);
 };
 
-const AxiosText = () => {
+const AxiosTest = () => {
   const [articleList, setArticleList] = useState<Array<Article>>([]);
   useEffect(() => {
     apiArticleRequest().then((d) => setArticleList(d.data.articles));
@@ -47,6 +49,7 @@ const AxiosText = () => {
   return (
     <>
       <h1>console을 확인해 보세요.</h1>
+      <HeaderTest />
       <ul>
         {articleList.map((article: Article) => (
           <li key={article.slug}>article.slug</li>
@@ -56,4 +59,4 @@ const AxiosText = () => {
   );
 };
 
-export default AxiosText;
+export default AxiosTest;

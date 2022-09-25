@@ -1,3 +1,5 @@
+import HeaderTest from '@src/pages/test/component/Header';
+
 /**
  * 부모에서 자식으로 데이터를 전송하는 방법
  */
@@ -17,6 +19,7 @@ export const Recommend = (prop: propType) => {
   return (
     <>
       <h1>Recommend {prop.title}</h1>
+      <HeaderTest />
     </>
   );
 };
