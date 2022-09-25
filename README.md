@@ -156,3 +156,12 @@ export default $1;
 ```
 # 참고사이트
 초기셋팅 : https://wiki.jjagu.com/?p=479
+리덕스 : https://curryyou.tistory.com/501, https://redux-toolkit.js.org/tutorials/rtk-query
+nextjs : https://nextjs.org/
+
+# 심볼 처리 :
+https://codeutility.org/reactjs-what-does-the-symbol-mean-in-a-react-import-statement-stack-overflow/
+https://medium.com/@jsh901220/typescript-node-absolute-path-5782b584e368
+ex)
+../../store - X
+@store/ - O
