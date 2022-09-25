@@ -1,7 +1,7 @@
 /**
  * https://haerang94.tistory.com/296
  */
-import { css, Global, keyframes } from '@emotion/react';
+import { css, Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import HeaderTest from '@src/pages/test/component/Header';
 
