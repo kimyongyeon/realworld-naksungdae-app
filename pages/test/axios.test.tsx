@@ -1,6 +1,31 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+export interface ArticleDTO {
+  articles: Article[];
+  articlesCount: number;
+}
+
+export interface Article {
+  slug: string;
+  title: string;
+  description: string;
+  body: string;
+  tagList: string[];
+  createdAt: Date;
+  updatedAt: Date;
+  favorited: boolean;
+  favoritesCount: number;
+  author: Author;
+}
+
+export interface Author {
+  username: string;
+  bio: null;
+  image: string;
+  following: boolean;
+}
+
 const host = 'https://api.realworld.io';
 
 // GET
@@ -15,7 +40,7 @@ const apiArticleRequest = async () => {
 };
 
 const AxiosText = () => {
-  const [articleList, setArticleList] = useState([]);
+  const [articleList, setArticleList] = useState<Array<Article>>([]);
   useEffect(() => {
     apiArticleRequest().then((d) => setArticleList(d.data.articles));
   }, []);
@@ -23,7 +48,7 @@ const AxiosText = () => {
     <>
       <h1>console을 확인해 보세요.</h1>
       <ul>
-        {articleList.map((article) => (
+        {articleList.map((article: Article) => (
           <li key={article.slug}>article.slug</li>
         ))}
       </ul>
