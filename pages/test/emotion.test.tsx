@@ -3,6 +3,7 @@
  */
 import { css, Global, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import HeaderTest from '@src/pages/test/component/Header';
 
 export const globalStyles = (
   <Global
@@ -76,10 +77,11 @@ const Counters = () => {
   return (
     <>
       <h1>Couter</h1>
+      <HeaderTest />
       <p>{count}</p>
       <p>회원정보 : {JSON.stringify(member)}</p>
 
-      <div>
+      <Combined>
         <label htmlFor="">이름 </label>
         <input
           type="text"
@@ -87,9 +89,9 @@ const Counters = () => {
           value={member?.name}
           onChange={(e) => setMember({ name: e.target.value })}
         />
-      </div>
+      </Combined>
 
-      <div>
+      <Combined>
         <label htmlFor="">나이 </label>
         <input
           type="text"
@@ -97,9 +99,9 @@ const Counters = () => {
           value={member?.age}
           onChange={(e) => setMember({ age: e.target.value })}
         />
-      </div>
+      </Combined>
 
-      <div>
+      <Combined>
         <label htmlFor="">휴대폰 </label>
         <input
           type="text"
@@ -107,9 +109,9 @@ const Counters = () => {
           value={member?.phone}
           onChange={(e) => setMember({ phone: e.target.value })}
         />
-      </div>
+      </Combined>
 
-      <div>
+      <Combined>
         <label htmlFor="">주소 </label>
         <input
           type="text"
@@ -117,7 +119,7 @@ const Counters = () => {
           value={member?.addr}
           onChange={(e) => setMember({ addr: e.target.value })}
         />
-      </div>
+      </Combined>
       <button onClick={() => setCount((c: number) => c + 1)}>count</button>
     </>
   );

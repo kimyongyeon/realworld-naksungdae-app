@@ -1,6 +1,7 @@
 /**
  * Hook을 이용한 간단한 입력 / 출력 처리 방법
  */
+import HeaderTest from '@src/pages/test/component/Header';
 import { useEffect, useState } from 'react';
 
 interface Member {
@@ -26,6 +27,7 @@ const Counters = () => {
   return (
     <>
       <h1>Couter</h1>
+      <HeaderTest />
       <p>{count}</p>
       <p>회원정보 : {JSON.stringify(member)}</p>
 

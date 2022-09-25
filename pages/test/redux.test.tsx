@@ -4,6 +4,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { plusCounter } from '@src/store/counterSlice';
 import { RootState } from '@src/store/store';
+import HeaderTest from '@src/pages/test/component/Header';
 
 export default function ReduxPage() {
   // 리덕스 상태를 불러온다.
@@ -15,7 +16,10 @@ export default function ReduxPage() {
 
   return (
     <div>
+      <h1>Redux test</h1>
+      <HeaderTest />
       <p>counterValue : {counterValue}</p>
+
       <button onClick={handlePluseCounter}>counter 증가</button>
     </div>
   );
