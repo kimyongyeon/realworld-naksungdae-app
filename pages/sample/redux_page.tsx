@@ -2,8 +2,8 @@
 // 실제로 Redux 를 사용하는 리액트 컴포넌트이다. (클라이언트 브라우저에서 작동한다.)
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { plusCounter } from '../../store/counterSlice';
-import { RootState } from '../../store/store';
+import { plusCounter } from '@src/store/counterSlice';
+import { RootState } from '@src/store/store';
 
 export default function ReduxPage() {
   // 리덕스 상태를 불러온다.
