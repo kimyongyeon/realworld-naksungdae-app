@@ -11,6 +11,8 @@
     "lint:fix": "eslint --fix './pages/*.{ts,tsx}'"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
     "next": "12.3.0",
@@ -37,6 +39,7 @@
     "prettier": "^2.7.1",
     "react-redux": "^8.0.4",
     "redux-logger": "^3.0.6",
+    "sass": "^1.55.0",
     "tsconfig-paths": "^4.1.0",
     "typescript": "^4.8.3"
   }
