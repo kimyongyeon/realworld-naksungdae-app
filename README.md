@@ -165,3 +165,6 @@ https://medium.com/@jsh901220/typescript-node-absolute-path-5782b584e368
 ex)
 ../../store - X
 @store/ - O
+
+# target 변경
+- es2017 await, async  사용을 위해 높임.
