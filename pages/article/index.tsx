@@ -28,6 +28,7 @@ const Article = () => {
 				</div>
 			</div>
 
+<<<<<<< HEAD
 			<div className="container page">
 				<div className="row article-content">
 					<div className="col-md-12">
@@ -39,6 +40,19 @@ const Article = () => {
 						<p>It's a great solution for learning how other frameworks work.</p>
 					</div>
 				</div>
+=======
+        <div className="container page">
+          <div className="row article-content">
+            <div className="col-md-12">
+              <p>
+                Web development technologies have evolved at an incredible clip over the past few
+                years.
+              </p>
+              <h2 id="introducing-ionic">Introducing RealWorld.</h2>
+              <p>It's a great solution for learning how other frameworks work.</p>
+            </div>
+          </div>
+>>>>>>> 9e9fcb4d8eb2330508eb3962e655c80118b65f86
 
 				<hr />
 
@@ -65,6 +79,7 @@ const Article = () => {
 					</div>
 				</div>
 
+<<<<<<< HEAD
 				<div className="row">
 					<div className="col-xs-12 col-md-8 offset-md-2">
 						<form className="card comment-form">
@@ -136,5 +151,64 @@ const Article = () => {
 			</div>
 		</div>
 	);
+=======
+          <div className="row">
+            <div className="col-xs-12 col-md-8 offset-md-2">
+              <form className="card comment-form">
+                <div className="card-block">
+                  <textarea className="form-control" placeholder="Write a comment..."></textarea>
+                </div>
+                <div className="card-footer">
+                  <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
+                  <button className="btn btn-sm btn-primary">Post Comment</button>
+                </div>
+              </form>
+
+              <div className="card">
+                <div className="card-block">
+                  <p className="card-text">
+                    With supporting text below as a natural lead-in to additional content.
+                  </p>
+                </div>
+                <div className="card-footer">
+                  <a href="" className="comment-author">
+                    <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
+                  </a>
+                  &nbsp;
+                  <a href="" className="comment-author">
+                    Jacob Schmidt
+                  </a>
+                  <span className="date-posted">Dec 29th</span>
+                </div>
+              </div>
+
+              <div className="card">
+                <div className="card-block">
+                  <p className="card-text">
+                    With supporting text below as a natural lead-in to additional content.
+                  </p>
+                </div>
+                <div className="card-footer">
+                  <a href="" className="comment-author">
+                    <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
+                  </a>
+                  &nbsp;
+                  <a href="" className="comment-author">
+                    Jacob Schmidt
+                  </a>
+                  <span className="date-posted">Dec 29th</span>
+                  <span className="mod-options">
+                    <i className="ion-edit"></i>
+                    <i className="ion-trash-a"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+>>>>>>> 9e9fcb4d8eb2330508eb3962e655c80118b65f86
 };
 export default Article;

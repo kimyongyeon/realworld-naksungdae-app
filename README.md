@@ -82,10 +82,12 @@ input - 공통 valid, width, height, 제약사항 textarea button - color, font
 loginInput <- input loginButton <- button
 
 # eslint 적용방법
-1. git pull origin main 
-2. yarn 
-3. vscode setting.json 아래 설정 
-vscode-extension : prettier, eslint 설치 
+
+1. git pull origin main
+2. yarn
+3. vscode setting.json 아래 설정
+   vscode-extension : prettier, eslint 설치
+
 ```
 {
   "window.zoomLevel": 2,
@@ -98,5 +100,71 @@ vscode-extension : prettier, eslint 설치
 }
 
 ```
-4. yarn lint 
-5. yarn lint:fix 
+
+4. yarn lint
+5. yarn lint:fix
+
+# snippet 정리
+
+## rfce
+
+```typescript
+import React from "react";
+
+function $1() {
+  return <div>$0</div>;
+}
+
+export default $1;
+```
+
+## rafcp
+
+```typescript
+import React from "react";
+import PropTypes from "prop-types";
+
+const $1 = props => {
+  return <div>$0</div>;
+};
+
+$1.propTypes = {};
+
+export default $1;
+```
+
+## rafc
+
+```typescript
+import React from "react";
+
+export const $1 = () => {
+  return <div>$0</div>;
+};
+```
+
+## rafce
+
+```typescript
+import React from "react";
+
+const $1 = () => {
+  return <div>$0</div>;
+};
+
+export default $1;
+```
+# 참고사이트
+초기셋팅 : https://wiki.jjagu.com/?p=479
+리덕스 : https://curryyou.tistory.com/501, https://redux-toolkit.js.org/tutorials/rtk-query
+nextjs : https://nextjs.org/
+
+# 심볼 처리 :
+https://codeutility.org/reactjs-what-does-the-symbol-mean-in-a-react-import-statement-stack-overflow/
+https://medium.com/@jsh901220/typescript-node-absolute-path-5782b584e368
+ex)
+../../store - X
+@store/ - O
+
+# target 변경
+- es2017 await, async  사용을 위해 높임.
