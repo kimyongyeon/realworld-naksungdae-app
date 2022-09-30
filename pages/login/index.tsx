@@ -57,21 +57,21 @@ function Login() {
    * @param e
    * 입력받은 이메일, 비밀번호 state에 저장
    */
-  const emailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  const emailHandler = (data) => {
+		setEmail(data);
+	};
 
-  const pwChange = (e) => {
-    setPw(e.target.value);
-  };
+  const pwHandler = (data) => {
+		setPw(data);
+	};
 
   return (
     <div style={div_1}>
       <h1 style={h1}> Sign in </h1>
       <p style={p}> Need an account? </p>
       <div style={div_2}>
-        <Input type="email" onChange={emailChange} />
-        <Input type="password" onChange={pwChange} />
+        <Input type="email" changeHandler={emailHandler} />
+        <Input type="password" changeHandler={pwHandler} />
         <button
           style={button}
           onClick={() => {

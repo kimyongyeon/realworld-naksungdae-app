@@ -12,13 +12,17 @@ function Input(props) {
     borderRadius: '0.3rem',
   };
 
+  const onChange = (e) => {
+    props.changeHandler(e.target.value);
+  };
+
   return (
     <input
       name={props.type}
       type={props.type}
       placeholder={props.type}
       style={styleObj}
-      onChange={props.onChange}
+      onChange={onChange}
     />
   );
 }
