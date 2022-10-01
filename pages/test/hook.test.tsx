@@ -15,14 +15,39 @@ const Counters = () => {
   const [count, setCount] = useState(0);
   const [member, setMember] = useState<Partial<Member>>(); // 인터페이스를 제네릭으로 쓰는 방법
 
+  // 컴포넌트 랜더링 될때마다 실행
+  // useEffect(() => {
+  //   console.log('재 렌더링');
+  // });
+
+  // 컴포넌트 count 상태가 변경될때마다 실행
   useEffect(() => {
-    setMember({
-      name: '수지',
-      addr: '서울시 강남구 역삼동',
-      age: 40,
-      phone: 1234,
-    });
-  }, []);
+    console.log(count, member);
+  }, [count, member]);
+
+  // 컴포넌트 unmount시 1회 실행
+  // useEffect(() => {
+  //   return () => {
+  //     setCount(0);
+  //   };
+  // }, []);
+
+  // effect안 코드 실행전 항상 실행
+  // useEffect(() => {
+  //   return () => {
+  //     setCount(100);
+  //   };
+  // });
+
+  // 1회만 실행
+  // useEffect(() => {
+  //   setMember({
+  //     name: '수지',
+  //     addr: '서울시 강남구 역삼동',
+  //     age: 40,
+  //     phone: 1234,
+  //   });
+  // }, []);
 
   return (
     <>
@@ -36,7 +61,7 @@ const Counters = () => {
         <input
           type="text"
           placeholder="이름"
-          value={member?.name}
+          value={member?.name || ''}
           onChange={(e) => setMember({ name: e.target.value })}
         />
       </div>
@@ -46,7 +71,7 @@ const Counters = () => {
         <input
           type="text"
           placeholder="나이"
-          value={member?.age}
+          value={member?.age || 0}
           onChange={(e) => setMember({ age: e.target.value })}
         />
       </div>
@@ -56,7 +81,7 @@ const Counters = () => {
         <input
           type="text"
           placeholder="휴대폰"
-          value={member?.phone}
+          value={member?.phone || 0}
           onChange={(e) => setMember({ phone: e.target.value })}
         />
       </div>
@@ -66,7 +91,7 @@ const Counters = () => {
         <input
           type="text"
           placeholder="주소"
-          value={member?.addr}
+          value={member?.addr || ''}
           onChange={(e) => setMember({ addr: e.target.value })}
         />
       </div>
