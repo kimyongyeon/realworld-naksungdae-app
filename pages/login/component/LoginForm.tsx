@@ -54,7 +54,7 @@ const LoginForm = () => {
           />
         </fieldset>
         <button className="btn btn-lg btn-primary pull-xs-right" type="submit">
-          Sign
+          Sign in
         </button>
       </form>
     </>
