@@ -3,6 +3,7 @@
 
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import counterSlice from '@src/store/counterSlice';
+import loginSlice from '@src/store/loginSlice';
 import logger from 'redux-logger';
 
 // 리덕스 store 생성함수
@@ -17,6 +18,7 @@ const makeStore = () => {
   const store = configureStore({
     reducer: {
       counter: counterSlice.reducer,
+      login: loginSlice.reducer,
       // [counterSlice.name]: counterSlice.reducer, // 위와 동일한 코드다.
       // [numberSlice.name]: numberSlice.reducer
     },

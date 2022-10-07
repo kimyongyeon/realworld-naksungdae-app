@@ -1,38 +1,25 @@
+import { setEmail } from '@src/store/loginSlice';
+import { RootState } from '@src/store/store';
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const LoginForm = () => {
-  const [account, setAccount] = useState({
-    email: '',
-    password: '',
-  });
+  const loginUser = useSelector((state: RootState) => state.login);
 
-  const [error, setError] = useState('');
+  const dispatch = useDispatch();
 
-  const { email, password } = account;
+  const { email, password } = loginUser;
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAccount({ ...account, [e.target.name]: e.target.value });
+  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    dispatch(setEmail(e.target.value));
   };
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    try {
-      e.preventDefault();
-      const resp = await axios.post('https://api.realworld.io/api/users/login', { user: account });
-      console.log(resp);
-    } catch (err) {
-      setError('Error!');
-    }
-  };
   return (
     <>
-      {error === '' || (
-        <ul className="error-messages">
-          <li>{error}</li>
-        </ul>
-      )}
-
-      <form onSubmit={onSubmit}>
+      <form>
         <fieldset className="form-group">
           <input
             className="form-control form-control-lg"
@@ -40,7 +27,7 @@ const LoginForm = () => {
             placeholder="Email"
             name="email"
             value={email}
-            onChange={onChange}
+            onChange={onChangeEmail}
           />
         </fieldset>
         <fieldset className="form-group">
@@ -50,7 +37,6 @@ const LoginForm = () => {
             placeholder="Password"
             name="password"
             value={password}
-            onChange={onChange}
           />
         </fieldset>
         <button className="btn btn-lg btn-primary pull-xs-right" type="submit">
