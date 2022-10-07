@@ -20,6 +20,9 @@ export const loginSlice = createSlice({
     image: '',
   },
   reducers: {
+    setUsername: (state: User, action: PayloadAction<string>) => {
+      state.username = action.payload;
+    },
     setEmail: (state: User, action: PayloadAction<string>) => {
       state.email = action.payload;
     },
@@ -27,6 +30,8 @@ export const loginSlice = createSlice({
       state.password = action.payload;
     },
     login: (state: User, action: PayloadAction<User>) => {
+      sessionStorage.setItem('token', action.payload.token);
+
       state.bio = action.payload.bio;
       state.image = action.payload.image;
       state.token = action.payload.token;
@@ -35,5 +40,5 @@ export const loginSlice = createSlice({
   },
 });
 
-export const { setEmail, setPassword, login } = loginSlice.actions;
+export const { setUsername, setEmail, setPassword, login } = loginSlice.actions;
 export default loginSlice;
