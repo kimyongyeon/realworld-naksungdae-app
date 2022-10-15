@@ -1,37 +1,37 @@
+import { login, setEmail, setPassword } from '@src/store/userSlice';
+import { RootState } from '@src/store/store';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const LoginForm = () => {
-  const [account, setAccount] = useState({
-    email: '',
-    password: '',
-  });
+  const user = useSelector((state: RootState) => state.user);
 
-  const [error, setError] = useState('');
+  const dispatch = useDispatch();
 
-  const { email, password } = account;
+  const { email, password } = user;
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAccount({ ...account, [e.target.name]: e.target.value });
+  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setEmail(e.target.value));
+  };
+
+  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setPassword(e.target.value));
   };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
-      const resp = await axios.post('https://api.realworld.io/api/users/login', { user: account });
-      console.log(resp);
-    } catch (err) {
-      setError('Error!');
-    }
+      const resp = await axios.post('https://api.realworld.io/api/users/login', {
+        user: { email, password },
+      });
+      dispatch(login(resp.data.user));
+    } catch (err) {}
   };
+
   return (
     <>
-      {error === '' || (
-        <ul className="error-messages">
-          <li>{error}</li>
-        </ul>
-      )}
-
       <form onSubmit={onSubmit}>
         <fieldset className="form-group">
           <input
@@ -40,7 +40,7 @@ const LoginForm = () => {
             placeholder="Email"
             name="email"
             value={email}
-            onChange={onChange}
+            onChange={onChangeEmail}
           />
         </fieldset>
         <fieldset className="form-group">
@@ -50,11 +50,11 @@ const LoginForm = () => {
             placeholder="Password"
             name="password"
             value={password}
-            onChange={onChange}
+            onChange={onChangePassword}
           />
         </fieldset>
         <button className="btn btn-lg btn-primary pull-xs-right" type="submit">
-          Sign
+          Sign in
         </button>
       </form>
     </>
