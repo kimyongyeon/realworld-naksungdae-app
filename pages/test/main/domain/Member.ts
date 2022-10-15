@@ -25,6 +25,9 @@ export class Member {
   }
 
   set age($age: number) {
+    if ($age <= 20) {
+      throw new Error('20이하는 가입할 수 있습니다.');
+    }
     this._age = $age;
   }
 

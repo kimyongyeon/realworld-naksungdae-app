@@ -23,7 +23,7 @@ type ItemType = {
   useYn: boolean; // 사용유무 (stockCount <= 0 : false)
 };
 
-type ActionType = {
+export type ActionType = {
   type: string;
   payload?: CartType;
 };

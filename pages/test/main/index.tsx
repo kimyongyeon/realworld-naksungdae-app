@@ -15,6 +15,15 @@ const Container = styled.div`
   margin: 5px;
 `;
 
+// mobx, rxjs...
+
+// root-node -> sub-node... -> sub-node : redux..
+
+// state
+// page1 => page2
+
+// client , server 상태
+
 const Main = () => {
   const members = useSelector((state: RootState) => state.memberReducer.memberList);
 
