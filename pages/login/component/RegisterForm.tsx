@@ -1,26 +1,21 @@
-import { RootState } from '@src/store/store';
-import { login, setEmail, setPassword, setUsername } from '@src/store/userSlice';
+import { login } from '@src/store/userSlice';
 import axios from 'axios';
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 const RegisterForm = () => {
-  const user = useSelector((state: RootState) => state.user);
+  const [account, setAccount] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+
+  const { username, email, password } = account;
 
   const dispatch = useDispatch();
 
-  const { username, email, password } = user;
-
-  const onChangeUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setUsername(e.target.value));
-  };
-
-  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setEmail(e.target.value));
-  };
-
-  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setPassword(e.target.value));
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAccount({ ...account, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,7 +42,7 @@ const RegisterForm = () => {
             placeholder="Username"
             name="username"
             value={username}
-            onChange={onChangeUsername}
+            onChange={onChange}
           />
         </fieldset>
         <fieldset className="form-group">
@@ -57,7 +52,7 @@ const RegisterForm = () => {
             placeholder="Email"
             name="email"
             value={email}
-            onChange={onChangeEmail}
+            onChange={onChange}
           />
         </fieldset>
         <fieldset className="form-group">
@@ -67,7 +62,7 @@ const RegisterForm = () => {
             placeholder="Password"
             name="password"
             value={password}
-            onChange={onChangePassword}
+            onChange={onChange}
           />
         </fieldset>
         <button className="btn btn-lg btn-primary pull-xs-right" type="submit">

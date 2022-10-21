@@ -1,23 +1,20 @@
-import { login, setEmail, setPassword } from '@src/store/userSlice';
-import { RootState } from '@src/store/store';
+import { login } from '@src/store/userSlice';
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 
 const LoginForm = () => {
-  const user = useSelector((state: RootState) => state.user);
+  const [account, setAccount] = useState({
+    email: '',
+    password: '',
+  });
+
+  const { email, password } = account;
 
   const dispatch = useDispatch();
 
-  const { email, password } = user;
-
-  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setEmail(e.target.value));
-  };
-
-  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setPassword(e.target.value));
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAccount({ ...account, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -40,7 +37,7 @@ const LoginForm = () => {
             placeholder="Email"
             name="email"
             value={email}
-            onChange={onChangeEmail}
+            onChange={onChange}
           />
         </fieldset>
         <fieldset className="form-group">
@@ -50,7 +47,7 @@ const LoginForm = () => {
             placeholder="Password"
             name="password"
             value={password}
-            onChange={onChangePassword}
+            onChange={onChange}
           />
         </fieldset>
         <button className="btn btn-lg btn-primary pull-xs-right" type="submit">

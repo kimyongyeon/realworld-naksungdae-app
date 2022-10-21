@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface User {
+export interface UserInfo {
   username: string;
   email: string;
   password: string;
@@ -9,36 +9,30 @@ export interface User {
   image: string;
 }
 
+export interface User {
+  userinfo: UserInfo;
+}
+
 export const loginSlice = createSlice({
   name: 'login',
   initialState: {
-    username: '',
-    email: '',
-    password: '',
-    token: '',
-    bio: '',
-    image: '',
+    userinfo: {
+      username: '',
+      email: '',
+      password: '',
+      token: '',
+      bio: '',
+      image: '',
+    },
   },
   reducers: {
-    setUsername: (state: User, action: PayloadAction<string>) => {
-      state.username = action.payload;
-    },
-    setEmail: (state: User, action: PayloadAction<string>) => {
-      state.email = action.payload;
-    },
-    setPassword: (state: User, action: PayloadAction<string>) => {
-      state.password = action.payload;
-    },
-    login: (state: User, action: PayloadAction<User>) => {
+    login: (state: User, action: PayloadAction<UserInfo>) => {
       sessionStorage.setItem('token', action.payload.token);
 
-      state.bio = action.payload.bio;
-      state.image = action.payload.image;
-      state.token = action.payload.token;
-      state.username = action.payload.username;
+      state.userinfo = action.payload;
     },
   },
 });
 
-export const { setUsername, setEmail, setPassword, login } = loginSlice.actions;
+export const { login } = loginSlice.actions;
 export default loginSlice;
