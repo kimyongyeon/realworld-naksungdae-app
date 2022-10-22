@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface UserInfo {
+export interface User {
   username: string;
   email: string;
   password: string;
@@ -9,14 +9,14 @@ export interface UserInfo {
   image: string;
 }
 
-export interface User {
-  userinfo: UserInfo;
+export interface Auth {
+  user: User;
 }
 
 export const loginSlice = createSlice({
   name: 'login',
   initialState: {
-    userinfo: {
+    user: {
       username: '',
       email: '',
       password: '',
@@ -26,10 +26,9 @@ export const loginSlice = createSlice({
     },
   },
   reducers: {
-    login: (state: User, action: PayloadAction<UserInfo>) => {
+    login: (state: Auth, action: PayloadAction<User>) => {
       sessionStorage.setItem('token', action.payload.token);
-
-      state.userinfo = action.payload;
+      state.user = action.payload;
     },
   },
 });
