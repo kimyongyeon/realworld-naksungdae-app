@@ -13,8 +13,8 @@ export interface Auth {
   user: User;
 }
 
-export const loginSlice = createSlice({
-  name: 'login',
+export const authSlice = createSlice({
+  name: 'auth',
   initialState: {
     user: {
       username: '',
@@ -33,5 +33,5 @@ export const loginSlice = createSlice({
   },
 });
 
-export const { login } = loginSlice.actions;
-export default loginSlice;
+export const { login } = authSlice.actions;
+export default authSlice;
