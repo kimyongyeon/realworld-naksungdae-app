@@ -21,14 +21,14 @@ const RegisterForm = () => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
-      const resp = await axios.post('https://api.realworld.io/api/users', {
+      const { data } = await axios.post('https://api.realworld.io/api/users', {
         user: {
           username,
           email,
           password,
         },
       });
-      dispatch(login(resp.data.user));
+      dispatch(login(data.user));
     } catch (err) {}
   };
 
