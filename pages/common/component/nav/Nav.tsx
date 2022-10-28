@@ -1,4 +1,18 @@
+import { getUser, setUser } from '@src/store/authSlice';
+import { useEffect } from 'react';
+
 const Nav = () => {
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+    if (token === null) {
+      return;
+    }
+
+    (async () => {
+      const user = await getUser(token);
+      setUser(user);
+    })();
+  }, []);
   return (
     <>
       <nav className="navbar navbar-light">

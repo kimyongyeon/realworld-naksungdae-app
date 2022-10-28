@@ -1,4 +1,4 @@
-import { login } from '@src/store/authSlice';
+import { setUser } from '@src/store/authSlice';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -28,7 +28,7 @@ const RegisterForm = () => {
           password,
         },
       });
-      dispatch(login(data.user));
+      dispatch(setUser(data.user));
     } catch (err) {}
   };
 

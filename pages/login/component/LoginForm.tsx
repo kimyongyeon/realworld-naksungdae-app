@@ -1,4 +1,4 @@
-import { login } from '@src/store/authSlice';
+import { setUser } from '@src/store/authSlice';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -23,7 +23,7 @@ const LoginForm = () => {
       const { data } = await axios.post('https://api.realworld.io/api/users/login', {
         user: { email, password },
       });
-      dispatch(login(data.user));
+      dispatch(setUser(data.user));
     } catch (err) {}
   };
 
