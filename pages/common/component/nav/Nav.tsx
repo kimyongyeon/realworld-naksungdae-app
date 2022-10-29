@@ -1,7 +1,14 @@
 import { getUser, setUser } from '@src/store/authSlice';
+import { RootState } from '@src/store/store';
+import Link from 'next/link';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Nav = () => {
+  const auth = useSelector((state: RootState) => state.auth);
+  const { user, isLogin } = auth;
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const token = sessionStorage.getItem('token');
     if (token === null) {
@@ -10,42 +17,50 @@ const Nav = () => {
 
     (async () => {
       const user = await getUser(token);
-      setUser(user);
+      dispatch(setUser(user));
     })();
   }, []);
+
   return (
     <>
       <nav className="navbar navbar-light">
         <div className="container">
-          <a className="navbar-brand" href="index.html">
+          <Link className="navbar-brand" href="/">
             conduit
-          </a>
+          </Link>
           <ul className="nav navbar-nav pull-xs-right">
             <li className="nav-item">
-              <a className="nav-link active" href="">
+              <Link className="nav-link active" href="/">
                 Home
-              </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="">
-                <i className="ion-compose"></i>&nbsp;New Article
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="">
-                <i className="ion-gear-a"></i>&nbsp;Settings
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="">
-                Sign in
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="">
-                Sign up
-              </a>
-            </li>
+            {!isLogin ? (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" href="/login/page/login">
+                    Sign in
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" href="/login/page/register">
+                    Sign up
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" href="">
+                    <i className="ion-compose">&nbsp;New Article</i>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" href="">
+                    <i className="ion-gear-a">&nbsp;Settings</i>
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </nav>
