@@ -55,8 +55,13 @@ const Nav = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="">
+                  <Link className="nav-link" href="/login/page/settings">
                     <i className="ion-gear-a">&nbsp;Settings</i>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" href="/login/page/profile">
+                    <i>&nbsp;{user.username}</i>
                   </Link>
                 </li>
               </>
