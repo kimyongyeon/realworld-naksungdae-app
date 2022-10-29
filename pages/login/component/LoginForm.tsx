@@ -1,9 +1,11 @@
 import { setUser } from '@src/store/authSlice';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 const LoginForm = () => {
+  const router = useRouter();
   const [account, setAccount] = useState({
     email: '',
     password: '',
@@ -24,6 +26,7 @@ const LoginForm = () => {
         user: { email, password },
       });
       dispatch(setUser(data.user));
+      router.push('/');
     } catch (err) {}
   };
 

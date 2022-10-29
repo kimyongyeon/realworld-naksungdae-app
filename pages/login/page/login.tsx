@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import LoginForm from '../component/LoginForm';
 
@@ -9,7 +10,7 @@ const login = () => {
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Sign in</h1>
             <div className="text-xs-center">
-              <a href="">Need an account?</a>
+              <Link href="/login/page/register">Need an account?</Link>
               <LoginForm></LoginForm>
             </div>
           </div>

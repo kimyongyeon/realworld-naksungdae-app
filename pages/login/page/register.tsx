@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import RegisterForm from '../component/RegisterForm';
 
@@ -9,7 +10,7 @@ const register = () => {
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Sign up</h1>
             <div className="text-xs-center">
-              <a href="">Have an account?</a>
+              <Link href="/login/page/register">Have an account?</Link>
             </div>
             <RegisterForm></RegisterForm>
           </div>
