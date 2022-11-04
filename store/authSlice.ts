@@ -13,6 +13,7 @@ export interface User {
 export interface Auth {
   user: User;
   isLogin: boolean;
+  isLoaded: boolean;
 }
 
 export const getUser = async (token: string): Promise<User> => {
@@ -36,15 +37,20 @@ export const authSlice = createSlice({
       image: '',
     },
     isLogin: false,
+    isLoaded: false,
   },
   reducers: {
     setUser: (state: Auth, action: PayloadAction<User>) => {
       sessionStorage.setItem('token', action.payload.token);
       state.user = action.payload;
       state.isLogin = true;
+      state.isLoaded = true;
+    },
+    setIsLoaded: (state: Auth) => {
+      state.isLoaded = true;
     },
   },
 });
 
-export const { setUser } = authSlice.actions;
+export const { setUser, setIsLoaded } = authSlice.actions;
 export default authSlice;
