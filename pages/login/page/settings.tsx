@@ -1,11 +1,10 @@
 import { RootState } from '@src/store/store';
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const settings = () => {
   const auth = useSelector((state: RootState) => state.auth);
   const { user } = auth;
-  const dispatch = useDispatch();
 
   const [profile, setProfile] = useState({
     username: user.username,
