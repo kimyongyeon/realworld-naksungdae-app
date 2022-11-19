@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import RegisterForm from '../component/RegisterForm';
+import RegisterForm from '../../component/user/RegisterForm';
 
 const register = () => {
   return (
@@ -10,7 +10,7 @@ const register = () => {
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Sign up</h1>
             <div className="text-xs-center">
-              <Link href="/login/page/register">Have an account?</Link>
+              <Link href="/user/register">Have an account?</Link>
             </div>
             <RegisterForm></RegisterForm>
           </div>

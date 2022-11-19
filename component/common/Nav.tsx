@@ -39,12 +39,12 @@ const Nav = () => {
               {!isLogin ? (
                 <>
                   <li className="nav-item">
-                    <Link href="/login/page/login">
+                    <Link href="/user/login">
                       <a className="nav-link">Sign in</a>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/login/page/register">
+                    <Link href="/user/register">
                       <a className="nav-link">Sign up</a>
                     </Link>
                   </li>
@@ -59,14 +59,14 @@ const Nav = () => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/login/page/settings">
+                    <Link href="/user/settings">
                       <a className="nav-link">
                         <i className="ion-gear-a">&nbsp;Settings</i>
                       </a>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/login/page/profile">
+                    <Link href="/user/profile">
                       <a className="nav-link">
                         <i>&nbsp;{user.username}</i>
                       </a>
