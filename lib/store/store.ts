@@ -2,9 +2,8 @@
 // 슬라이스들을 통합한 store를 만들고, RootState를 정의해준다.
 
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import memberSlice from '@src/pages/test/main/store/MemberStore';
-import counterSlice from '@src/store/counterSlice';
-import authSlice from '@src/store/authSlice';
+import counterSlice from '@src/lib/store/counterSlice';
+import authSlice from '@src/lib/store/authSlice';
 import logger from 'redux-logger';
 
 // 리덕스 store 생성함수

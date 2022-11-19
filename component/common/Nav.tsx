@@ -1,5 +1,5 @@
-import { getUser, setIsLoaded, setUser } from '@src/store/authSlice';
-import { RootState } from '@src/store/store';
+import { getUser, setIsLoaded, setUser } from '@src/lib/store/authSlice';
+import { RootState } from '@src/lib/store/store';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';

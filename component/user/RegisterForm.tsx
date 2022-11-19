@@ -1,4 +1,4 @@
-import { setUser } from '@src/store/authSlice';
+import { setUser } from '@src/lib/store/authSlice';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
