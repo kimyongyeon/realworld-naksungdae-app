@@ -41,7 +41,6 @@ export const authSlice = createSlice({
   },
   reducers: {
     setUser: (state: Auth, action: PayloadAction<User>) => {
-      sessionStorage.setItem('token', action.payload.token);
       state.user = action.payload;
       state.isLogin = true;
       state.isLoaded = true;
