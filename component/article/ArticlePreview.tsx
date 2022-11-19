@@ -1,4 +1,4 @@
-import { Article } from '@src/lib/store/type/articleType';
+import { Article } from '@src/lib/type/articleType';
 
 const ArticlePreview = ({ article }: { article: Article }) => {
   return (

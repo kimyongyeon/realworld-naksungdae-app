@@ -1,5 +1,5 @@
 import ArticlePreview from '@src/component/article/ArticlePreview';
-import { Article } from '@src/lib/store/type/articleType';
+import { Article } from '@src/lib/type/articleType';
 
 import axios from 'axios';
 import type { NextPage } from 'next';
